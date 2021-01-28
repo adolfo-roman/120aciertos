@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> //Libreria para funcion system("clear")
+#include <Windows.h> //Libreria para funcion Sleep()
 
 /*
 Bienvenido al codigo fuente del proyecto "120 aciertos".
@@ -25,6 +26,16 @@ printf("*                  120 aciertos                    *\n");
 printf("*                                                  *\n");
 printf("****************************************************\n");
 printf("\n");
+
+do
+{
+  printf("Presiona Enter para continuar.\n");
+  Sleep(500);
+  system("cls");
+  Sleep(500);  
+}
+while( getchar() != '\n' );
+
 printf("Presiona Enter para continuar.\n");
 
 /* Usamos la funcion while para indicar que siempre y cuando no se presione
@@ -33,16 +44,7 @@ la tecla de salto de linea, osea enter, continue ejecutando el loop*/
 while( getchar() != '\n' );
 
 system("clear") //limpia la pantalla para pasar al siguiente menu
-printf("works");
 
-
-
-
-
-
-
-
-
-
+printf("works\n");
 
 }
