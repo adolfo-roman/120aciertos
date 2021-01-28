@@ -27,23 +27,29 @@ printf("*                                                  *\n");
 printf("****************************************************\n");
 printf("\n");
 
+int i = 1;
+
 do
 {
-  printf("Presiona Enter para continuar.\n");
+  //system("cls");
+  //Sleep(500);
+  if(getchar() != '\n'){
+    int i = 0;
+  } else {
+    printf("Presiona Enter para continuar.\n");
   Sleep(500);
-  system("cls");
-  Sleep(500);  
+  }
 }
-while( getchar() != '\n' );
+while( i );
 
-printf("Presiona Enter para continuar.\n");
+//printf("Presiona Enter para continuar.\n");
 
 /* Usamos la funcion while para indicar que siempre y cuando no se presione
 la tecla de salto de linea, osea enter, continue ejecutando el loop*/
 
-while( getchar() != '\n' );
+//while( getchar() != '\n' );
 
-system("clear") //limpia la pantalla para pasar al siguiente menu
+//system("clear"); //limpia la pantalla para pasar al siguiente menu
 
 printf("works\n");
 
