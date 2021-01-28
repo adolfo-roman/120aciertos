@@ -27,7 +27,7 @@ printf("*                                                  *\n");
 printf("****************************************************\n");
 printf("\n");
 
-printf("Presiona Enter para continuar.\n");
+printf("            Presiona Enter para continuar           \n");
 
 /* Usamos la funcion while para indicar que siempre y cuando no se presione
 la tecla de salto de linea, osea enter, continue ejecutando el loop*/
