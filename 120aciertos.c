@@ -12,10 +12,28 @@ el aspirante o cualquier persona interesada consultarla.
 En este programa nos enfocaremos en la segunda parte como parte del
 proyecto semestral de Fundamentos de Programacion para intentar aprobar
 la asignatura.
-
-
 */
+
 int main (){
+
+printf("****************************************************\n");
+printf("*                                                  *\n");
+printf("*                  120 aciertos                    *\n");
+printf("*                                                  *\n");
+printf("****************************************************\n");
+printf("\n");
+printf("Presiona Enter para continuar.\n", );
+while( getchar() != '\n' );
+
+
+
+
+
+
+
+
+
+
 
 
 
