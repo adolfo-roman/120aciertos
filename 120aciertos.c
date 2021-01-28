@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> //Libreria para funcion system("clear")
 
 /*
 Bienvenido al codigo fuente del proyecto "120 aciertos".
@@ -14,7 +15,9 @@ proyecto semestral de Fundamentos de Programacion para intentar aprobar
 la asignatura.
 */
 
-int main (){
+int main ()
+{
+//uso de printf para el banner inicial del programa
 
 printf("****************************************************\n");
 printf("*                                                  *\n");
@@ -22,13 +25,15 @@ printf("*                  120 aciertos                    *\n");
 printf("*                                                  *\n");
 printf("****************************************************\n");
 printf("\n");
-printf("Presiona Enter para continuar.\n", );
+printf("Presiona Enter para continuar.\n");
+
+/* Usamos la funcion while para indicar que siempre y cuando no se presione
+la tecla de salto de linea, osea enter, continue ejecutando el loop*/
+
 while( getchar() != '\n' );
 
-
-
-
-
+system("clear") //limpia la pantalla para pasar al siguiente menu
+printf("works");
 
 
 
