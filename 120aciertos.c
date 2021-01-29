@@ -1,85 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h> //Libreria para funcion system("clear")
-#include <ncurses.h>
 
-/*
-Bienvenido al codigo fuente del proyecto "120 aciertos".
-
-Este proyecto tiene como objetivo principal el uso de un algoritmo que
-prediga los resultados del examen de admision a la UNAM por carrera y como
-objetivo secundario pretende organizar toda la informacion de los
-resultados del concurso de seleccion para que sea mas facil para
-el aspirante o cualquier persona interesada consultarla.
-
-En este programa nos enfocaremos en la segunda parte como parte del
-proyecto semestral de Fundamentos de Programacion para intentar aprobar
-la asignatura.
-*/
-
-int main ()
-{
-
-    //uso de printf para el banner inicial del programa
-
-    printf("****************************************************\n");
-    printf("*                                                  *\n");
-    printf("*                  120 aciertos                    *\n");
-    printf("*                                                  *\n");
-    printf("****************************************************\n");
-    printf("\n");
-    printf("          Presiona Enter para continuar             ");
-
-
-    /* Usamos la funcion while para indicar que siempre y cuando no se presione
-    la tecla de salto de linea, osea enter, continue ejecutando el loop*/
-
-    while( getchar() != '\n' );
-
-    system("clear"); //limpia la pantalla para pasar al siguiente menu
-
-    //Primer menu
-    int floating(float x)
-    {
-      int a = x;
-
-      if(a < x || a > x)
-      {
-        return 1;
-      }
-      else {
-        return 0;
-      }
-    }
-
-    int menu1; //Declaramos variable para la opcion que desee
-
-    do{
-
-        printf("Que tipo de informacion deseas conocer?\n");
-        printf("\n");
-        printf("1)Quiero saber el numero de aciertos\n");
-        printf("2)Quiero saber alumnos aplicaron\n");
-        printf("3)Quiero saber cual es el estimado\n");
-        printf("\n");
-        printf("Selecciona el numero de la opcion deseada: ");
-
-        scanf("%i", &menu1);
-
-        system("clear");
-      }
-      while(menu1%10 != 0 || (menu1 < 1 || menu1 > 3) );
-
-
-
-      printf("Works\n");
-
-
-
-
-}
-
-#include <stdio.h>
-#include <stdlib.h> //Libreria para funcion system("clear")
+// Definimos variable para el numero de facultades en Area 1
+# define AREA 1 = 10;
 
 /*
 Bienvenido al codigo fuente del proyecto "120 aciertos".
@@ -122,6 +45,8 @@ int main ()
     while( getchar() != '\n' );
 
     system("clear"); //limpia la pantalla para pasar al siguiente menu
+
+
     //Primer menu
 
 
@@ -142,6 +67,14 @@ int main ()
         system("clear");
       }
       while(floating(menu1) || (menu1 < 1 || menu1 > 3));
+
+      //Segundo menu
+
+      int menu2; //Declaramos variable del segundo menu
+
+      printf("Selecciona el campus:\n");
+      printf("\n");
+      for
 
 
 
