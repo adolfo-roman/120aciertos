@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> //Libreria para funcion system("clear")
-#include <Windows.h> //Libreria para funcion Sleep()
+#include <ncurses.h>
 
 /*
 Bienvenido al codigo fuente del proyecto "120 aciertos".
@@ -18,24 +18,41 @@ la asignatura.
 
 int main ()
 {
-//uso de printf para el banner inicial del programa
 
-printf("****************************************************\n");
-printf("*                                                  *\n");
-printf("*                  120 aciertos                    *\n");
-printf("*                                                  *\n");
-printf("****************************************************\n");
-printf("\n");
+    int opcion1 = 0;
 
-printf("            Presiona Enter para continuar           \n");
+    //uso de printf para el banner inicial del programa
 
-/* Usamos la funcion while para indicar que siempre y cuando no se presione
-la tecla de salto de linea, osea enter, continue ejecutando el loop*/
+    printf("****************************************************\n");
+    printf("*                                                  *\n");
+    printf("*                  120 aciertos                    *\n");
+    printf("*                                                  *\n");
+    printf("****************************************************\n");
+    printf("\n");
+    printf("          Presiona Enter para continuar             ");
 
-while( getchar() != '\n' );
 
-system("clear"); //limpia la pantalla para pasar al siguiente menu
+    /* Usamos la funcion while para indicar que siempre y cuando no se presione
+    la tecla de salto de linea, osea enter, continue ejecutando el loop*/
 
-printf("works\n");
+    while( getchar() != '\n' );
+
+    system("clear"); //limpia la pantalla para pasar al siguiente menu
+
+    //Segundo menu
+
+    printf("Que tipo de informacion deseas conocer?\n");
+    printf("\n");
+    printf("1)Quiero saber el numero de aciertos\n");
+    printf("2)Quiero saber alumnos aplicaron\n");
+    printf("3)Quiero saber cual es el estimado\n");
+    printf("\n");
+    printf("Selecciona el numero de la opcion deseada: ");
+
+    scanf("%i", &opcion1);
+
+
+
+
 
 }
