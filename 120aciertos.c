@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h> //Libreria para funcion system("clear")
+#include "data.h"
 
 // Definimos variable para el numero de facultades en Area 1
-# define AREA1 = 10;
+# define AREA1 11
 
 /*
 Bienvenido al codigo fuente del proyecto "120 aciertos".
@@ -18,12 +19,6 @@ proyecto semestral de Fundamentos de Programacion para intentar aprobar
 la asignatura.
 */
 
-//Esta funcion evalua si el numero ingresado es o no un entero
-int fnum(float x)
-{
-  int a = x;
-  return a < x ? 1:0;
-}
 
 int main ()
 {
@@ -70,25 +65,22 @@ int main ()
 
       //Segundo menu
 
-      int menu2; //Declaramos variable del segundo menu
+      /*Este segundo menu sigue la misma logica que el primero
+      con la diferencia de que en este caso usamos el arreglo
+      declarado en el archivo externo, data.h para que
+      nos regrese la lista de las facultades existentes a traves
+      de un for loop*/
 
-      //Este segundo menu sigue la misma logica que el primero
+      float menu2; //Declaramos variable del segundo menu
 
       do
       {
         printf("Selecciona el campus:\n");
         printf("\n");
-        printf("1) ESCUELA NACIONAL DE CIENCIAS DE LA TIERRA\n");
-        printf("2) ESCUELA NAL. DE ESTUDIOS SUP. UNIDAD JURIQUILLA\n");
-        printf("3) ESCUELA NAL. DE ESTUDIOS SUP. UNIDAD MERIDA\n");
-        printf("4) FACULTAD DE ARQUITECTURA\n");
-        printf("5) FACULTAD DE CIENCIAS\n");
-        printf("6) FACULTAD DE INGENIERIA\n");
-        printf("7) FACULTAD DE QUIMICA\n");
-        printf("8) FES ACATLAN\n");
-        printf("9) FES ARAGON\n");
-        printf("10) FES CUAUTITLAN\n");
-        printf("11) FES ZARAGOZA\n");
+         for(int i = 0; i < AREA1; i++ )
+        {
+          printf("%i) %s\n", i+1, facultades[i]);
+        }
         printf("\n");
         printf("Selecciona el numero de la opcion deseada: ");
 
@@ -96,48 +88,44 @@ int main ()
 
         system("clear"); //Limpia la pantalla
 
-      } while(fnum(menu2) || (menu2 < 1 || menu2 > 11))
+      } while(fnum(menu2) || (menu2 < 1 || menu2 > 11));
 
-      menu2 = menu2 + 3;
 
-      char carreras[30]=
+      switch((int)menu2)
       {
-        "ACTUARIA",
-        "ARQUITECTURA",
-        "ARQUITECTURA DE PAISAJE",
-        "CIENCIAS DE LA COMPUTACION",
-        "DISEÑO INDUSTRIAL",
-        "FISICA",
-        "INGENIERIA CIVIL",
-        "INGENIERIA DE MINAS Y METALURGIA",
-        "INGENIERIA ELECTRICA ELECTRONICA",
-        "INGENIERIA EN COMPUTACION",
-        "INGENIERIA GEOFISICA",
-        "INGENIERIA INDUSTRIAL",
-        "INGENIERIA MECANICA",
-        "INGENIERIA MECANICA ELECTRICA",
-        "INGENIERIA PETROLERA",
-        "INGENIERIA QUIMICA",
-        "INGENIERIA QUIMICA METALURGICA",
-        "INGENIERIA GEOMATICA",
-        "MATEMATICAS APLICADAS Y COMPUTACION",
-        "MATEMATICAS",
-        "URBANISMO",
-        "CIENCIAS DE LA TIERRA",
-        "ING. EN TELECOMUNICACIONES, SISTEMAS Y ELECTRONICA",
-        "GEOCIENCIAS",
-        "TECNOLOGIAS PARA LA INFORMACION EN CIENCIAS",
-        "CIENCIA DE MATERIALES SUSTENTABLES",
-        "FISICA BIOMEDICA",
-        "MATEMATICAS APLICADAS",
-        "INGENIERIA AMBIENTAL",
-        "INGENIERIA AEROESPACIAL"
+          case(6):
+
+    do
+      {
+        printf("Selecciona la carrera:\n");
+        printf("\n");
+
+        int arr[6] = {0,3,5,19,26,27};
+
+         for(int i = 0; i < 6; i++ )
+        {
+          printf("%i) %s\n", i+1, carreras[arr[i]]);
+        }
+        printf("\n");
+        printf("Selecciona el numero de la opcion deseada: ");
+
+        scanf("%f", &menu2); // Tiene un bug 0.999... lo evalua a 1
+
+        system("clear"); //Limpia la pantalla
+
+      } while(fnum(menu2) || (menu2 < 1 || menu2 > 11));
+
+
+
+
       }
 
-      switch()
-      {
 
+      for(int i = 0; i < 30; i++ )
+      {
+          printf("%s\n", carreras[i]);
       }
+
 
 
 
