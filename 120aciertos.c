@@ -42,6 +42,8 @@ int main ()
     int menu1; //Declaramos variable para la opcion que desee
 
     do{
+        menu1 = 0;
+
         printf("Que tipo de informacion deseas conocer?\n");
         printf("\n");
         printf("1)Quiero saber el numero de aciertos\n");
@@ -51,8 +53,10 @@ int main ()
         printf("Selecciona el numero de la opcion deseada: ");
 
         scanf("%i", &menu1);
+
+        system("clear");
       }
-      while(menu1%2 != 0 && menu1 < 1 || menu1 > 3 );
+      while(menu1%10 != 0 || (menu1 < 1 || menu1 > 3) );
 
       printf("Works\n");
 
