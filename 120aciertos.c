@@ -19,8 +19,6 @@ la asignatura.
 int main ()
 {
 
-    int opcion1 = 0;
-
     //uso de printf para el banner inicial del programa
 
     printf("****************************************************\n");
@@ -39,18 +37,24 @@ int main ()
 
     system("clear"); //limpia la pantalla para pasar al siguiente menu
 
-    //Segundo menu
+    //Primer menu
 
-    printf("Que tipo de informacion deseas conocer?\n");
-    printf("\n");
-    printf("1)Quiero saber el numero de aciertos\n");
-    printf("2)Quiero saber alumnos aplicaron\n");
-    printf("3)Quiero saber cual es el estimado\n");
-    printf("\n");
-    printf("Selecciona el numero de la opcion deseada: ");
+    int menu1; //Declaramos variable para la opcion que desee
 
-    scanf("%i", &opcion1);
+    do{
+        printf("Que tipo de informacion deseas conocer?\n");
+        printf("\n");
+        printf("1)Quiero saber el numero de aciertos\n");
+        printf("2)Quiero saber alumnos aplicaron\n");
+        printf("3)Quiero saber cual es el estimado\n");
+        printf("\n");
+        printf("Selecciona el numero de la opcion deseada: ");
 
+        scanf("%i", &menu1);
+      }
+      while(menu1%2 != 0 && menu1 < 1 || menu1 > 3 );
+
+      printf("Works\n");
 
 
 
