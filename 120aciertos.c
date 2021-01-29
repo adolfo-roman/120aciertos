@@ -2,7 +2,7 @@
 #include <stdlib.h> //Libreria para funcion system("clear")
 
 // Definimos variable para el numero de facultades en Area 1
-# define AREA 1 = 10;
+# define AREA1 = 10;
 
 /*
 Bienvenido al codigo fuente del proyecto "120 aciertos".
@@ -66,15 +66,78 @@ int main ()
 
         system("clear");
       }
-      while(floating(menu1) || (menu1 < 1 || menu1 > 3));
+      while(fnum(menu1) || (menu1 < 1 || menu1 > 3));
 
       //Segundo menu
 
       int menu2; //Declaramos variable del segundo menu
 
-      printf("Selecciona el campus:\n");
-      printf("\n");
-      for
+      //Este segundo menu sigue la misma logica que el primero
+
+      do
+      {
+        printf("Selecciona el campus:\n");
+        printf("\n");
+        printf("1) ESCUELA NACIONAL DE CIENCIAS DE LA TIERRA\n");
+        printf("2) ESCUELA NAL. DE ESTUDIOS SUP. UNIDAD JURIQUILLA\n");
+        printf("3) ESCUELA NAL. DE ESTUDIOS SUP. UNIDAD MERIDA\n");
+        printf("4) FACULTAD DE ARQUITECTURA\n");
+        printf("5) FACULTAD DE CIENCIAS\n");
+        printf("6) FACULTAD DE INGENIERIA\n");
+        printf("7) FACULTAD DE QUIMICA\n");
+        printf("8) FES ACATLAN\n");
+        printf("9) FES ARAGON\n");
+        printf("10) FES CUAUTITLAN\n");
+        printf("11) FES ZARAGOZA\n");
+        printf("\n");
+        printf("Selecciona el numero de la opcion deseada: ");
+
+        scanf("%f", &menu2); // Tiene un bug 0.999... lo evalua a 1
+
+        system("clear"); //Limpia la pantalla
+
+      } while(fnum(menu2) || (menu2 < 1 || menu2 > 11))
+
+      menu2 = menu2 + 3;
+
+      char carreras[30]=
+      {
+        "ACTUARIA",
+        "ARQUITECTURA",
+        "ARQUITECTURA DE PAISAJE",
+        "CIENCIAS DE LA COMPUTACION",
+        "DISEÑO INDUSTRIAL",
+        "FISICA",
+        "INGENIERIA CIVIL",
+        "INGENIERIA DE MINAS Y METALURGIA",
+        "INGENIERIA ELECTRICA ELECTRONICA",
+        "INGENIERIA EN COMPUTACION",
+        "INGENIERIA GEOFISICA",
+        "INGENIERIA INDUSTRIAL",
+        "INGENIERIA MECANICA",
+        "INGENIERIA MECANICA ELECTRICA",
+        "INGENIERIA PETROLERA",
+        "INGENIERIA QUIMICA",
+        "INGENIERIA QUIMICA METALURGICA",
+        "INGENIERIA GEOMATICA",
+        "MATEMATICAS APLICADAS Y COMPUTACION",
+        "MATEMATICAS",
+        "URBANISMO",
+        "CIENCIAS DE LA TIERRA",
+        "ING. EN TELECOMUNICACIONES, SISTEMAS Y ELECTRONICA",
+        "GEOCIENCIAS",
+        "TECNOLOGIAS PARA LA INFORMACION EN CIENCIAS",
+        "CIENCIA DE MATERIALES SUSTENTABLES",
+        "FISICA BIOMEDICA",
+        "MATEMATICAS APLICADAS",
+        "INGENIERIA AMBIENTAL",
+        "INGENIERIA AEROESPACIAL"
+      }
+
+      switch()
+      {
+
+      }
 
 
 
@@ -82,25 +145,5 @@ int main ()
 
 
 
-
-}
-
-#include<stdio.h>
-
-int main()
-{
-
- float x = 2;
- float z = x;
- float b;
- int y;
-
- for(int i = 0; i < 1000; i++)
- {
-     b = (float)i/1000;
-     y = x + b;
-     z = x + b;
-     printf("y = %i and z = %.3f\n", y, z);
- }
 
 }
