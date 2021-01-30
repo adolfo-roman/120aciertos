@@ -3,7 +3,7 @@
 #include "data.h"
 
 // Definimos variable para el numero de facultades en Area 1
-# define AREA1 11
+# define AREA1 12
 
 /*
 Bienvenido al codigo fuente del proyecto "120 aciertos".
@@ -22,6 +22,8 @@ la asignatura.
 
 int main ()
 {
+
+   system("clear"); //limpia la pantalla para pasar al siguiente menu
 
     //uso de printf para el banner inicial del programa
 
@@ -77,9 +79,9 @@ int main ()
       {
         printf("Selecciona el campus:\n");
         printf("\n");
-        for(int i = 0; i < AREA1; i++) //Toma la constante para limitar las iteraciones
+         for(int i = 0; i < AREA1; i++ )
         {
-          printf("%i) %s\n", i+1, facultades[i]); //imprime cada elemento del arreglo
+          printf("%i) %s\n", i+1, facultades[i]);
         }
         printf("\n");
         printf("Selecciona el numero de la opcion deseada: ");
@@ -90,42 +92,132 @@ int main ()
 
       } while(fnum(menu2) || (menu2 < 1 || menu2 > 11));
 
-      // Tercer menu1
+      int a = menu2-1;
 
-      /* Este menu lo usamos como caso switch debido a que las variaciones
+/**
+ * Tercer Menu
+ *
+ * En este menu se usa la variable menu2 para elegir el numero de arreglo
+ * correspondiente a la facultad, ej: si menu2 = 7 significa que la opcion
+ * que se ingreso fue la de la Facultad de Ingenieria.
+ *
+ * Despues se usa el siguiente switch para otorgar un valor a la variable
+ * sub dependiendo de la variable menu2, la variable sub proporciona el
+ * numero de elementos dentro de cada subarreglo de "opciones" y cada
+ * elemento de estos contiene un numero que servira para imprimir las carreras
+ * correspondiente a ese numero dentro del arreglo "carreras" como limite del
+ * for loop.
+ *
+ * Asi, si menu2 = 6, entonces sub = 6; y esto le dira al programa que
+ * queremos imprimir del arreglo de "opciones" la que corresponda a la 6ta
+ * posicion y esta de acuerdo con sub, tendra 6 elementos, por lo que el
+ * for loop solo llevara a cabo 6 iteraciones.
+ *
+ * Cada uno de estos elementos contiene un numero dependiendo de la facultad
+ * que sera el resultado que pasara como argumento del arreglo "carreras"
+ * que al mismo tiempo imprimira el numero correspondiente a su arreglo y como
+ * resultado final, tendremos el nombre de cada una de las carreras
+ * que se imparten en la facultad escogida.
+ *
+ **/
 
-      do
+
+      int sub;
+
+      switch((int)menu2) //realizamos un cast para convertir a int la variable
+        {
+          case 1:
+            sub = 1;
+            break;
+          case 2:
+            sub = 1;
+            break;
+          case 3:
+            sub = 1;
+            break;
+          case 4:
+            sub = 2;
+            break;
+          case 5:
+            sub = 3;
+            break;
+          case 6:
+            sub = 6;
+            break;
+          case 7:
+            sub = 12;
+            break;
+          case 8:
+            sub = 2;
+            break;
+          case 9:
+            sub = 4;
+            break;
+          case 10:
+            sub = 7;
+            break;
+          case 11:
+            sub = 4;
+            break;
+          case 12:
+            sub = 1;
+            break;
+          }
+
+
+     float menu3;
+
+
+    do
       {
-        sub = 1;
 
-      }while()
 
-      do
-      {
+        printf("%s\n", facultades[a]);
         printf("Selecciona la carrera:\n");
         printf("\n");
 
-        int arr[6] = {0,3,5,19,26,27};
 
-        for(int i = 0; i < 6; i++ )
+         for(int i = 0; i < sub; i++ )
         {
-          printf("%i) %s\n", i+1, carreras[arr[i]]);
+          printf("%i) %s\n", i+1, carreras[opciones[a][i]]);
         }
         printf("\n");
         printf("Selecciona el numero de la opcion deseada: ");
 
-        scanf("%f", &menu2); // Tiene un bug 0.999... lo evalua a 1
+        scanf("%f", &menu3); // Tiene un bug 0.999... lo evalua a 1
 
         system("clear"); //Limpia la pantalla
 
-      } while(fnum(menu2) || (menu2 < 1 || menu2 > 11));
+      } while(fnum(menu3) || (menu3 < 1 || menu3 > sub));
+
+      int b = menu3 - 1;
 
 
 
-      for(int i = 0; i < 30; i++ )
-      {
-          printf("%s\n", carreras[i]);
-      }
+
+
+      printf("Facultad: %s\n", facultades[a]);
+      printf("\n");
+      printf("Carrera: %s\n", carreras[opciones[a][b]]);
+      printf("\n");
+      printf("Estos son los datos del concurso de Junio 2020\n");
+      printf("\n");
+      printf("Para esta carrera: \n");
+      printf("\n");
+      printf("Se ofertaron: %i lugares\n", data[a][b][0]);
+      printf("Se registraron para examen: %i aspirantes\n", data[a][b][1]);
+      printf("Presentaron el examen: %i aspirantes\n", data[a][b][2]);
+      printf("El puntaje minimo fue de: %i aciertos\n", data[a][b][3]);
+      printf("Resultaron seleccionados: %i aspirantes\n", data[a][b][4]);
+      printf("\n");
+      printf("El porcentaje de aceptados fue de: %.2f aspirantes\n", (float)(data[a][b][4])/(float)data[a][b][2]);
+
+
+
+
+
+
+
 
 
 
