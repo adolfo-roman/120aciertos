@@ -33,52 +33,37 @@ int main ()
     printf("*                                                  *\n");
     printf("****************************************************\n");
     printf("\n");
+    printf("Bienvenido al proyecto de 120 aciertos\n");
+    printf("\n");
+    printf("Con este pequeno programa podras saber algunos datos\n");
+    printf("sobre el proceso de admision a las carreras de area 1\n");
+    printf("en la UNAM.\n");
     printf("          Presiona Enter para continuar             ");
 
-
     /* Usamos la funcion while para indicar que siempre y cuando no se presione
-    la tecla de salto de linea, osea enter, continue ejecutando el loop*/
+      la tecla de salto de linea, osea enter, continue ejecutando el loop*/
 
-    while( getchar() != '\n' );
+        while( getchar() != '\n' );
 
-    system("clear"); //limpia la pantalla para pasar al siguiente menu
-
-
-    //Primer menu
+        system("clear"); //limpia la pantalla para pasar al siguiente menu
 
 
-    float menu1; //Declaramos variable para la opcion que desee
+     //Primer menu
 
-    do{
-
-        printf("Que tipo de informacion deseas conocer?\n");
-        printf("\n");
-        printf("1)Quiero saber el numero de aciertos\n");
-        printf("2)Quiero saber alumnos aplicaron\n");
-        printf("3)Quiero saber cual es el estimado\n");
-        printf("\n");
-        printf("Selecciona el numero de la opcion deseada: ");
-
-        scanf("%f", &menu1); // Tiene un bug 0.999... lo evalua a 1
-
-        system("clear");
-      }
-      while(fnum(menu1) || (menu1 < 1 || menu1 > 3));
-
-      //Segundo menu
-
-      /*Este segundo menu sigue la misma logica que el primero
-      con la diferencia de que en este caso usamos el arreglo
+      /*En este primer menu usamos el arreglo
       declarado en el archivo externo, data.h para que
       nos regrese la lista de las facultades existentes a traves
-      de un for loop*/
+      de un for loop tomando la informacion desde el arreglo "facultadoes "
+      en el documento*/
 
-      float menu2; //Declaramos variable del segundo menu
+      float menu1; //Declaramos variable del primer menu
 
       do
       {
         printf("Selecciona el campus:\n");
         printf("\n");
+
+        //Usamos la directica define para el numero de campus que ofertan el area 1
          for(int i = 0; i < AREA1; i++ )
         {
           printf("%i) %s\n", i+1, facultades[i]);
@@ -86,19 +71,20 @@ int main ()
         printf("\n");
         printf("Selecciona el numero de la opcion deseada: ");
 
-        scanf("%f", &menu2); // Tiene un bug 0.999... lo evalua a 1
+        scanf("%f", &menu1); // Tiene un bug 0.999... lo evalua a 1
 
         system("clear"); //Limpia la pantalla
 
-      } while(fnum(menu2) || (menu2 < 1 || menu2 > 11));
+      } while(fnum(menu1) || (menu1 < 1 || menu1 > 11));
 
-      int a = menu2-1;
+      int a = menu1-1;
 
 /**
- * Tercer Menu
+ * Segundo Menu
  *
  * En este menu se usa la variable menu2 para elegir el numero de arreglo
- * correspondiente a la facultad, ej: si menu2 = 7 significa que la opcion
+ * correspondiente a la facultad en cuestion como opcion del switch,
+ ej: si menu2 = 7 significa que la opcion
  * que se ingreso fue la de la Facultad de Ingenieria.
  *
  * Despues se usa el siguiente switch para otorgar un valor a la variable
@@ -165,15 +151,19 @@ int main ()
           }
 
 
-     float menu3;
+     float menu2;
 
 
-    do
+      do
       {
         printf("%s\n", facultades[a]);
         printf("Selecciona la carrera:\n");
         printf("\n");
-        
+
+        /*El siguiente for-loop toma las opciones de carrera del arreglo contenido
+        en el documento data.h de tal manera que ya la informacion puede ser un poco mas
+        dinamica para imprimirse y no tener que escribirla*/
+
          for(int i = 0; i < sub; i++ )
         {
           printf("%i) %s\n", i+1, carreras[opciones[a][i]]);
@@ -181,13 +171,17 @@ int main ()
         printf("\n");
         printf("Selecciona el numero de la opcion deseada: ");
 
-        scanf("%f", &menu3); // Tiene un bug 0.999... lo evalua a 1
+        scanf("%f", &menu2); // Tiene un bug 0.999... lo evalua a 1
 
         system("clear"); //Limpia la pantalla
 
-      } while(fnum(menu3) || (menu3 < 1 || menu3 > sub));
+      } while(fnum(menu2) || (menu2 < 1 || menu3 > sub));
 
-      int b = menu3 - 1;
+      int b = menu2 - 1;
+
+      /*Esta es la parte de los resultados finales del programa, en donde el Programacion
+      busca la informacion relacionada con las instrucciones del usuario e imprime a la pantalla
+      los elementos requeridos del arreglo en cuestion que es el de data*/
 
       printf("Facultad: %s\n", facultades[a]);
       printf("\n");
@@ -203,5 +197,7 @@ int main ()
       printf("El puntaje minimo fue de: %i aciertos\n", data[a+1][b][3]);
       printf("Resultaron seleccionados: %i aspirantes\n", data[a+1][b][4]);
       printf("\n");
+
+      return 0;
 
 }
