@@ -77,9 +77,9 @@ int main ()
       {
         printf("Selecciona el campus:\n");
         printf("\n");
-         for(int i = 0; i < AREA1; i++ )
+        for(int i = 0; i < AREA1; i++) //Toma la constante para limitar las iteraciones
         {
-          printf("%i) %s\n", i+1, facultades[i]);
+          printf("%i) %s\n", i+1, facultades[i]); //imprime cada elemento del arreglo
         }
         printf("\n");
         printf("Selecciona el numero de la opcion deseada: ");
@@ -90,19 +90,24 @@ int main ()
 
       } while(fnum(menu2) || (menu2 < 1 || menu2 > 11));
 
+      // Tercer menu1
 
-      switch((int)menu2)
+      /* Este menu lo usamos como caso switch debido a que las variaciones
+
+      do
       {
-          case(6):
+        sub = 1;
 
-    do
+      }while()
+
+      do
       {
         printf("Selecciona la carrera:\n");
         printf("\n");
 
         int arr[6] = {0,3,5,19,26,27};
 
-         for(int i = 0; i < 6; i++ )
+        for(int i = 0; i < 6; i++ )
         {
           printf("%i) %s\n", i+1, carreras[arr[i]]);
         }
@@ -115,10 +120,6 @@ int main ()
 
       } while(fnum(menu2) || (menu2 < 1 || menu2 > 11));
 
-
-
-
-      }
 
 
       for(int i = 0; i < 30; i++ )
