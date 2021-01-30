@@ -124,8 +124,11 @@ int main ()
 
       int sub;
 
-      switch((int)menu2) //realizamos un cast para convertir a int la variable
+      switch(a) //realizamos un cast para convertir a int la variable
         {
+          case 0:
+            sub = 1;
+            break;
           case 1:
             sub = 1;
             break;
@@ -133,33 +136,30 @@ int main ()
             sub = 1;
             break;
           case 3:
-            sub = 1;
+            sub = 2;
             break;
           case 4:
-            sub = 2;
-            break;
-          case 5:
             sub = 3;
             break;
-          case 6:
+          case 5:
             sub = 6;
             break;
-          case 7:
+          case 6:
             sub = 12;
             break;
-          case 8:
+          case 7:
             sub = 2;
             break;
-          case 9:
+          case 8:
             sub = 4;
             break;
-          case 10:
+          case 9:
             sub = 7;
             break;
-          case 11:
+          case 10:
             sub = 4;
             break;
-          case 12:
+          case 11:
             sub = 1;
             break;
           }
@@ -170,13 +170,10 @@ int main ()
 
     do
       {
-
-
         printf("%s\n", facultades[a]);
         printf("Selecciona la carrera:\n");
         printf("\n");
-
-
+        
          for(int i = 0; i < sub; i++ )
         {
           printf("%i) %s\n", i+1, carreras[opciones[a][i]]);
@@ -192,10 +189,6 @@ int main ()
 
       int b = menu3 - 1;
 
-
-
-
-
       printf("Facultad: %s\n", facultades[a]);
       printf("\n");
       printf("Carrera: %s\n", carreras[opciones[a][b]]);
@@ -204,27 +197,11 @@ int main ()
       printf("\n");
       printf("Para esta carrera: \n");
       printf("\n");
-      printf("Se ofertaron: %i lugares\n", data[a][b][0]);
-      printf("Se registraron para examen: %i aspirantes\n", data[a][b][1]);
-      printf("Presentaron el examen: %i aspirantes\n", data[a][b][2]);
-      printf("El puntaje minimo fue de: %i aciertos\n", data[a][b][3]);
-      printf("Resultaron seleccionados: %i aspirantes\n", data[a][b][4]);
+      printf("Se ofertaron: %i lugares\n", data[a+1][b][0]);
+      printf("Se registraron para examen: %i aspirantes\n", data[a+1][b][1]);
+      printf("Presentaron el examen: %i aspirantes\n", data[a+1][b][2]);
+      printf("El puntaje minimo fue de: %i aciertos\n", data[a+1][b][3]);
+      printf("Resultaron seleccionados: %i aspirantes\n", data[a+1][b][4]);
       printf("\n");
-      printf("El porcentaje de aceptados fue de: %.2f aspirantes\n", (float)(data[a][b][4])/(float)data[a][b][2]);
-
-
-
-
-
-
-
-
-
-
-
-      printf("Works\n");
-
-
-
 
 }
