@@ -25,7 +25,7 @@ const char *facultades[12] =
 
 
 
-const char *carreras[31]=
+const char *carreras[32]=
       {
         "NULL",
         "ACTUARIA",
@@ -61,15 +61,13 @@ const char *carreras[31]=
         "INGENIERIA AEROESPACIAL"
       };
 
-int opcion1[1] = {23};
-int opcion2[1] = {23};
-int opcion3[1] = {23};
-int opcion4[2] = {24, 26};
-int opcion5[3] = {22, 2, 3};
-int opcion6[6] = {1, 4,6,21,28,29};
-int opcion7[12] = {7, 8, 9, 10, 11, 12, 13, 14, 16, 19, 30, 31};
-int opcion8[2] = {17, 18};
-int opcion9[4] = {1, 2, 7, 20};
-int opcion10[7] = {2, 5, 7, 9, 10, 13, 14};
-int opcion11[4] = {13, 15, 17, 24};
-int opcion12[1] = {17};
+
+      int opciones[12][12] =
+      {
+        {23}, {23}, {23}, {24, 26},
+        {22, 2, 3}, {1, 4,6,21,28,29},
+        {7, 8, 9, 10, 11, 12, 13, 14, 16, 19, 30, 31},
+        {17, 18}, {1, 2, 7, 20}, {2, 5, 7, 9, 10, 13, 14},
+        {13, 15, 17, 24}, {17}
+
+      };
